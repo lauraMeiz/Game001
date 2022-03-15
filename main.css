@@ -12,8 +12,8 @@ body {
 
 main {
   background-color: lightblue;
-  width: 1000px;
-  margin: 0 calc(50% - 500px);
+  width: 800px;
+  margin: 0 calc(50% - 400px);
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
@@ -21,10 +21,11 @@ main {
     "time time"
     "leftas raitas"
     "btn1 btn2";
-  margin-top: 70px;
+  margin-top: 20px;
 }
 
 .time {
+  padding: 40px 20px;
   grid-area: time;
   width: 100px;
   height: 100px;
@@ -36,11 +37,12 @@ main {
   box-shadow: 3px 3px black;
   color: wheat;
   border-radius: 50%;
+  font-size: 20px;
 }
 .section {
   grid-area: section;
-  width: 500px;
-  height: 500px;
+  width: 400px;
+  height: 400px;
   display: grid;
   border-radius: 50%;
   background-color: #776e67;
@@ -79,18 +81,19 @@ main {
 }
 .left-square {
   background-color: #776e67;
-  width: 350px;
-  height: 350px;
+  width: 250px;
+  height: 250px;
   margin-top: 70px;
   display: grid;
   justify-self: center;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  font-size: 20px;
 }
 .right-square {
   background-color: #776e67;
-  width: 350px;
-  height: 350px;
+  width: 250px;
+  height: 250px;
   margin-top: 70px;
   display: grid;
   justify-self: center;
