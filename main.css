@@ -1,0 +1,99 @@
+body,
+body * {
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+main {
+  background-color: lightblue;
+  width: 1000px;
+  margin: 0 calc(50% - 500px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+    "time time"
+    "leftas raitas"
+    "btn1 btn2";
+  margin-top: 70px;
+}
+
+.time {
+  grid-area: time;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-self: center;
+  opacity: 0.5;
+  background-color: #776e67;
+  box-shadow: 3px 3px black;
+  color: wheat;
+  border-radius: 50%;
+}
+.section {
+  grid-area: section;
+  width: 500px;
+  height: 500px;
+  display: grid;
+  border-radius: 50%;
+  background-color: #776e67;
+  opacity: 0.5;
+  box-shadow: 3px 3px black;
+}
+.btn1 {
+  width: 60px;
+  height: 60px;
+  grid-area: btn1;
+  justify-self: end;
+  cursor: pointer;
+  background-color: #776e67;
+  opacity: 0.5;
+  box-shadow: 3px 3px black;
+  color: wheat;
+  border-radius: 50%;
+}
+.btn2 {
+  width: 60px;
+  height: 60px;
+  grid-area: btn2;
+  justify-self: start;
+  cursor: pointer;
+  opacity: 0.5;
+  background-color: #776e67;
+  box-shadow: 3px 3px black;
+  color: wheat;
+  border-radius: 50%;
+}
+.left-round {
+  grid-area: leftas;
+}
+.right-round {
+  grid-area: raitas;
+}
+.left-square {
+  background-color: #776e67;
+  width: 350px;
+  height: 350px;
+  margin-top: 70px;
+  display: grid;
+  justify-self: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
+.right-square {
+  background-color: #776e67;
+  width: 350px;
+  height: 350px;
+  margin-top: 70px;
+  display: grid;
+  justify-self: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
