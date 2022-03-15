@@ -35,7 +35,7 @@ main {
   display: flex;
   flex-direction: row;
   justify-self: center;
-  opacity: 0.5;
+  opacity: 1;
   background-color: #729fff;
   box-shadow: 3px 3px black;
   color: white;
@@ -59,7 +59,7 @@ main {
   justify-self: end;
   cursor: pointer;
   background-color: #729fff;
-  opacity: 0.5;
+  opacity: 1;
   box-shadow: 3px 3px black;
   color: white;
   border-radius: 50%;
@@ -70,7 +70,7 @@ main {
   grid-area: btn2;
   justify-self: start;
   cursor: pointer;
-  opacity: 0.5;
+  opacity: 1;
   background-color: #729fff;
   box-shadow: 3px 3px black;
   color: white;
@@ -81,6 +81,7 @@ main {
 }
 .right-round {
   grid-area: raitas;
+  opacity: 1;
 }
 .left-square {
   background-color: #729fff;
