@@ -36,7 +36,6 @@ btn1.addEventListener("click", () => {
       const color = "rgb(" + r + "," + g + "," + b + ")";
       createBall.style.backgroundColor = color;
     }
-
     const timeReset = 3600;
     let clockTime = 0;
     function updateClock() {
@@ -49,6 +48,15 @@ btn1.addEventListener("click", () => {
       timer.innerText = ` ${m < 10 ? "0" + m : m} : ${s < 10 ? "0" + s : s}`;
     }
     const my = setInterval(updateClock, 1000);
+    console.log(rutuliukai);
+    // const balls = document.querySelector(".left-square div");
+    const newArr = [];
+    rutuliukai.forEach((e) => {
+      newArr.push(e);
+      newArr.sort();
+    });
+    newArr.sort((a, b) => a - b);
+    console.log(newArr);
 
     const btn2 = document.querySelector(".btn2");
 
@@ -69,3 +77,7 @@ btn1.addEventListener("click", () => {
     }
   });
 });
+
+const newPlace = document.querySelector(".right-square");
+
+const ballmoved = document.createElement("div");
