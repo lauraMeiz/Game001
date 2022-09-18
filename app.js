@@ -37,22 +37,22 @@ function start() {
       btn1.setAttribute("disabled", "");
     }
   }
-
-  console.log(rutuliukai);
 }
 
 const timeReset = 3600;
 let clockTime = 0;
+let my;
+
 function updateClock() {
   if (clockTime === timeReset) {
     clockTime--;
   }
   clockTime++;
+
   const m = Math.floor(clockTime / 60);
   const s = clockTime % 60;
   timer.innerText = ` ${m < 10 ? "0" + m : m} : ${s < 10 ? "0" + s : s}`;
 }
-const my = setInterval(updateClock, 1000);
 
 // const balls = document.querySelector(".left-square div");
 // const newArr = [];
@@ -67,6 +67,8 @@ btn1.addEventListener("click", (e) => {
   e.stopPropagation();
 
   start();
+
+  my = setInterval(updateClock, 1000);
   clockTime = 0;
 });
 
@@ -80,15 +82,14 @@ btn2.addEventListener("click", (e) => {
 
   rutuliukai = [];
   rutuliukuVieta.innerHTML = "";
-
+  console.log(myStopFunction);
   console.log(rutuliukai);
 });
 
 function myStopFunction() {
-  clearTimeout(0);
-  // clockTime = 0;
+  clearInterval(my);
+
   timer.innerText = `Let's start!`;
-  // timer.innerText = `00 : 00`;
 }
 
 const newPlace = document.querySelector(".right-square");
