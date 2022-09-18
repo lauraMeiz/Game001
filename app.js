@@ -8,75 +8,88 @@ const timer = document.querySelector(".time");
 const rutuliukuVieta = document.querySelector(".left-square");
 const btn1 = document.querySelector(".btn1");
 
-btn1.addEventListener("click", () => {
-  const rutuliukai = [];
-
+let rutuliukai = [];
+function start() {
   while (rutuliukai.length < 25) {
     const rutulys = rand(1, 25);
+
     if (!rutuliukai.includes(rutulys)) {
       rutuliukai.push(rutulys);
+      if (rutuliukai.length == 25) {
+        rutuliukai.forEach((ball) => {
+          const createBall = document.createElement("div");
+          createBall.style.borderRadius = "50%";
+          createBall.style.textAlign = "center";
+          createBall.style.color = "white";
+          createBall.style.margin = "2px";
+          const r = rand(0, 255);
+          const g = rand(0, 255);
+          const b = rand(0, 255);
+          const color = "rgb(" + r + "," + g + "," + b + ")";
+          createBall.style.backgroundColor = color;
+          const ballText = document.createTextNode(ball);
+          createBall.appendChild(ballText);
+          rutuliukuVieta.appendChild(createBall);
+          console.log(createBall);
+        });
+      }
     } else {
       btn1.setAttribute("disabled", "");
     }
   }
 
-  rutuliukai.forEach((ball) => {
-    if (rutuliukai.length > 0) {
-      const createBall = document.createElement("div");
-      const ballText = document.createTextNode(ball);
-      createBall.appendChild(ballText);
-      rutuliukuVieta.appendChild(createBall);
-      createBall.style.borderRadius = "50%";
-      createBall.style.textAlign = "center";
-      createBall.style.color = "white";
-      createBall.style.margin = "2px";
-      const r = rand(0, 255);
-      const g = rand(0, 255);
-      const b = rand(0, 255);
-      const color = "rgb(" + r + "," + g + "," + b + ")";
-      createBall.style.backgroundColor = color;
-    }
-    const timeReset = 3600;
-    let clockTime = 0;
-    function updateClock() {
-      if (clockTime === timeReset) {
-        clockTime--;
-      }
-      clockTime++;
-      const m = Math.floor(clockTime / 60);
-      const s = clockTime % 60;
-      timer.innerText = ` ${m < 10 ? "0" + m : m} : ${s < 10 ? "0" + s : s}`;
-    }
-    const my = setInterval(updateClock, 1000);
-    console.log(rutuliukai);
-    // const balls = document.querySelector(".left-square div");
-    const newArr = [];
-    rutuliukai.forEach((e) => {
-      newArr.push(e);
-      newArr.sort();
-    });
-    newArr.sort((a, b) => a - b);
-    console.log(newArr);
+  console.log(rutuliukai);
+}
 
-    const btn2 = document.querySelector(".btn2");
+const timeReset = 3600;
+let clockTime = 0;
+function updateClock() {
+  if (clockTime === timeReset) {
+    clockTime--;
+  }
+  clockTime++;
+  const m = Math.floor(clockTime / 60);
+  const s = clockTime % 60;
+  timer.innerText = ` ${m < 10 ? "0" + m : m} : ${s < 10 ? "0" + s : s}`;
+}
+const my = setInterval(updateClock, 1000);
 
-    btn2.addEventListener("click", () => {
-      removeBalls();
-      myStopFunction();
-    });
+// const balls = document.querySelector(".left-square div");
+// const newArr = [];
+// rutuliukai.forEach((e) => {
+//   newArr.push(e);
+//   newArr.sort();
+// });
+// newArr.sort((a, b) => a - b);
+// console.log(newArr);
 
-    //console.log(rutuliukai);
+btn1.addEventListener("click", (e) => {
+  e.stopPropagation();
 
-    function removeBalls() {
-      rutuliukuVieta.style.display = "none";
-    }
-
-    function myStopFunction() {
-      clearInterval(my);
-      timer.innerText = `00 : 00`;
-    }
-  });
+  start();
+  clockTime = 0;
 });
+
+const btn2 = document.querySelector(".btn2");
+
+btn2.addEventListener("click", (e) => {
+  e.stopPropagation();
+  myStopFunction();
+
+  btn1.disabled = false;
+
+  rutuliukai = [];
+  rutuliukuVieta.innerHTML = "";
+
+  console.log(rutuliukai);
+});
+
+function myStopFunction() {
+  clearTimeout(0);
+  // clockTime = 0;
+  timer.innerText = `Let's start!`;
+  // timer.innerText = `00 : 00`;
+}
 
 const newPlace = document.querySelector(".right-square");
 
