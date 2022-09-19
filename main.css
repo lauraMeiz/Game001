@@ -28,20 +28,21 @@ main {
 }
 
 .time {
-  padding: 40px 20px;
+  padding: 5px 20px;
   grid-area: time;
   width: 100px;
   height: 100px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-self: center;
   opacity: 1;
   background-color: #729fff;
   box-shadow: 3px 3px black;
   color: white;
-  border-radius: 50%;
+  border-radius: 20%;
   font-size: 20px;
 }
+
 .section {
   grid-area: section;
   width: 400px;
@@ -76,6 +77,15 @@ main {
   color: white;
   border-radius: 50%;
 }
+.hover {
+  font-style: italic;
+}
+.btn1:hover,
+.btn2:hover {
+  background-color: #e2e7f0;
+  color: rgb(0, 0, 0);
+  font-style: italic;
+}
 .left-round {
   grid-area: leftas;
   opacity: 0.8;
@@ -105,3 +115,27 @@ main {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
 }
+.comments {
+  color: azure;
+  width: 150px;
+  padding: 30px;
+  border-radius: 50%;
+  margin-top: -100px;
+  margin-left: -50px;
+  display: none;
+  text-transform: uppercase;
+  font-style: italic;
+  z-index: 3;
+}
+
+/* .notFine {
+  background-color: rgb(235, 19, 19);
+  color: azure;
+  width: 100px;
+  padding: 20px;
+  border-radius: 50%;
+  margin-top: -50px;
+  margin-left: -50px;
+  display: none;
+  z-index: 1;
+} */
