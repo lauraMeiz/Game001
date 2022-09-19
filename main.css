@@ -24,7 +24,7 @@ main {
     "time time"
     "leftas raitas"
     "btn1 btn2";
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .time {
@@ -121,15 +121,17 @@ main {
   padding: 30px;
   border-radius: 50%;
   margin-top: -100px;
-  margin-left: -50px;
+  margin-left: -80px;
   display: none;
   text-transform: uppercase;
   font-style: italic;
   z-index: 3;
 }
 .bestScores {
-  width: 300px;
-  height: 100px;
+  margin-left: -200px;
+  margin-top: -150px;
+  width: 100px;
+  height: auto;
   background-color: #e2e7f0;
   color: rgb(31, 26, 26);
   font-style: italic;
@@ -137,6 +139,8 @@ main {
 }
 
 h1 {
+  margin-left: -200px;
+  margin-top: -100px;
   color: white;
 }
 

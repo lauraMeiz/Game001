@@ -15,14 +15,23 @@ const notFine = document.querySelector(".notFine");
 let d = new Date();
 let text = d.toLocaleDateString();
 
-const best = document.querySelector(".bestScores");
-
-const besties = JSON.parse(localStorage.getItem("save"));
-const mapas = besties.map((m, i) => m.replace("", "  -->  "));
+// const best = document.querySelector(".bestScores");
+let scoreSave = localStorage.getItem("save")
+  ? JSON.parse(localStorage.getItem("save"))
+  : [];
+// const scoreSave = JSON.parse(localStorage.getItem("save"));
+const ulas = document.querySelector(".list");
+scoreSave.forEach((el) => {
+  const li3 = document.createElement("li");
+  const sarasas = document.createTextNode(el);
+  li3.appendChild(sarasas);
+  ulas.appendChild(li3);
+});
+// const mapas = scoreSave.map((m, i) => m);
 
 // m + text);
 
-best.innerText = `${mapas}  `;
+// best.innerText = `${mapas}  `;
 
 function myColor() {
   const r = rand(0, 255);
@@ -35,12 +44,12 @@ let rutuliukai = [];
 let newArray = [];
 
 function start() {
-  while (rutuliukai.length < 25) {
-    const rutulys = rand(1, 25);
+  while (rutuliukai.length < 5) {
+    const rutulys = rand(1, 5);
 
     if (!rutuliukai.includes(rutulys)) {
       rutuliukai.push(rutulys);
-      if (rutuliukai.length == 25) {
+      if (rutuliukai.length == 5) {
         rutuliukai.forEach((ball) => {
           const createBall = document.createElement("div");
           createBall.classList.add("poviena");
@@ -68,7 +77,7 @@ function start() {
 
   const visi = document.querySelectorAll(".poviena");
 
-  const bestScore = [];
+  // const bestScore = [];
   visi.forEach((el) => {
     el.addEventListener("click", (e) => {
       e.stopPropagation();
@@ -85,28 +94,23 @@ function start() {
       if (rutuliukai2.length === 0) {
         komentarai.innerText = `Done!!! your time is ${timer.innerText}`;
         console.log(timer.innerText);
-        let scoreSave = localStorage.getItem("save")
-          ? JSON.parse(localStorage.getItem("save"))
-          : [];
 
         if (timer.innerText) {
-          const save = timer.innerText;
+          const saveT = timer.innerText;
 
-          scoreSave.push(save);
+          scoreSave.push(saveT);
           localStorage.setItem("save", JSON.stringify(scoreSave));
+
+          let html = `<li>${saveT}</li>`;
+          ulas.insertAdjacentHTML("afterend", html);
         }
 
-        const best = document.querySelector(".bestScores");
-
-        const besties = JSON.parse(localStorage.getItem("save"));
-
-        console.log(text);
-        best.innerText = `${text}-- >${besties}`;
+        // ulas.innerHTML = `<li>${scoreSave}<li>`;
 
         komentarai.style.display = "block";
 
-        bestScore.push(timer.innerText);
-        console.log(bestScore);
+        // bestScore.push(timer.innerText);
+        // console.log(bestScore);
         myStopFunction();
       }
     });
@@ -116,7 +120,7 @@ d = new Date();
 text = d.toLocaleDateString();
 console.log(text);
 
-const timeReset = 120;
+const timeReset = 3600;
 let clockTime = 0;
 let my;
 
