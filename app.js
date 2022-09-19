@@ -15,11 +15,10 @@ const notFine = document.querySelector(".notFine");
 let d = new Date();
 let text = d.toLocaleDateString();
 
-// const best = document.querySelector(".bestScores");
 let scoreSave = localStorage.getItem("save")
   ? JSON.parse(localStorage.getItem("save"))
   : [];
-// const scoreSave = JSON.parse(localStorage.getItem("save"));
+
 const ulas = document.querySelector(".list");
 scoreSave.forEach((el) => {
   const li3 = document.createElement("li");
@@ -27,11 +26,6 @@ scoreSave.forEach((el) => {
   li3.appendChild(sarasas);
   ulas.appendChild(li3);
 });
-// const mapas = scoreSave.map((m, i) => m);
-
-// m + text);
-
-// best.innerText = `${mapas}  `;
 
 function myColor() {
   const r = rand(0, 255);
@@ -44,12 +38,12 @@ let rutuliukai = [];
 let newArray = [];
 
 function start() {
-  while (rutuliukai.length < 5) {
-    const rutulys = rand(1, 5);
+  while (rutuliukai.length < 25) {
+    const rutulys = rand(1, 25);
 
     if (!rutuliukai.includes(rutulys)) {
       rutuliukai.push(rutulys);
-      if (rutuliukai.length == 5) {
+      if (rutuliukai.length == 25) {
         rutuliukai.forEach((ball) => {
           const createBall = document.createElement("div");
           createBall.classList.add("poviena");
@@ -77,7 +71,6 @@ function start() {
 
   const visi = document.querySelectorAll(".poviena");
 
-  // const bestScore = [];
   visi.forEach((el) => {
     el.addEventListener("click", (e) => {
       e.stopPropagation();
@@ -105,12 +98,8 @@ function start() {
           ulas.insertAdjacentHTML("afterend", html);
         }
 
-        // ulas.innerHTML = `<li>${scoreSave}<li>`;
-
         komentarai.style.display = "block";
 
-        // bestScore.push(timer.innerText);
-        // console.log(bestScore);
         myStopFunction();
       }
     });
@@ -141,7 +130,7 @@ btn1.addEventListener("click", (e) => {
   e.stopPropagation();
 
   start();
-  timer.style.height = "30px";
+
   my = setInterval(updateClock, 1000);
   clockTime = 0;
 });
@@ -164,5 +153,4 @@ function myStopFunction() {
   clearInterval(my);
 
   timer.innerText = `Retry!!`;
-  timer.style.height = "80px";
 }

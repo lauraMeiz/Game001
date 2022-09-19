@@ -31,7 +31,7 @@ main {
   padding: 5px 20px;
   grid-area: time;
   width: 100px;
-  height: 100px;
+  height: 50px;
   display: flex;
   flex-direction: column;
   justify-self: center;
@@ -129,29 +129,31 @@ main {
 }
 .bestScores {
   margin-left: -200px;
-  margin-top: -150px;
-  width: 100px;
+  margin-top: -500px;
+  width: 140px;
   height: auto;
-  background-color: #e2e7f0;
+  background-color: #b1c3e8;
   color: rgb(31, 26, 26);
   font-style: italic;
   font-weight: bolder;
 }
-
-h1 {
-  margin-left: -200px;
-  margin-top: -100px;
-  color: white;
+ul {
+  width: 140px;
+  margin: 0 calc(50% - 70px);
+}
+ul li {
+  list-style: none;
+  padding-left: 10px;
+  text-align: center;
+  border-bottom: 2px dotted #729fff;
 }
 
-/* .notFine {
-  background-color: rgb(235, 19, 19);
-  color: azure;
-  width: 100px;
-  padding: 20px;
-  border-radius: 50%;
-  margin-top: -50px;
-  margin-left: -50px;
-  display: none;
-  z-index: 1;
-} */
+h3 {
+  color: rgb(83, 79, 149);
+  text-align: center;
+  background-color: #9aafdd;
+}
+h1 {
+  color: rgb(242, 24, 166);
+  text-align: center;
+}
