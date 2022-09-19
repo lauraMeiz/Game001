@@ -127,6 +127,18 @@ main {
   font-style: italic;
   z-index: 3;
 }
+.bestScores {
+  width: 300px;
+  height: 100px;
+  background-color: #e2e7f0;
+  color: rgb(31, 26, 26);
+  font-style: italic;
+  font-weight: bolder;
+}
+
+h1 {
+  color: white;
+}
 
 /* .notFine {
   background-color: rgb(235, 19, 19);

@@ -12,6 +12,17 @@ const newPlace = document.querySelector(".right-square");
 const ballmoved = document.createElement("div");
 const komentarai = document.querySelector(".comments");
 const notFine = document.querySelector(".notFine");
+let d = new Date();
+let text = d.toLocaleDateString();
+
+const best = document.querySelector(".bestScores");
+
+const besties = JSON.parse(localStorage.getItem("save"));
+const mapas = besties.map((m, i) => m.replace("", "  -->  "));
+
+// m + text);
+
+best.innerText = `${mapas}  `;
 
 function myColor() {
   const r = rand(0, 255);
@@ -22,10 +33,6 @@ function myColor() {
 }
 let rutuliukai = [];
 let newArray = [];
-
-const scores = localStorage.setItem("scores", []);
-
-console.log(scores);
 
 function start() {
   while (rutuliukai.length < 25) {
@@ -47,7 +54,6 @@ function start() {
           const b = rand(0, 255);
           const color = "rgb(" + r + "," + g + "," + b + ", " + 0.5 + ")";
           createBall.style.background = ` radial-gradient(circle at ${1.4}vw ${1.4}vw, ${color}, #000)`;
-          // createBall.style.backgroundColor = color;
           const ballText = document.createTextNode(ball);
           createBall.appendChild(ballText);
           rutuliukuVieta.appendChild(createBall);
@@ -61,6 +67,7 @@ function start() {
   rutuliukai2.sort((a, b) => a - b);
 
   const visi = document.querySelectorAll(".poviena");
+
   const bestScore = [];
   visi.forEach((el) => {
     el.addEventListener("click", (e) => {
@@ -78,21 +85,36 @@ function start() {
       if (rutuliukai2.length === 0) {
         komentarai.innerText = `Done!!! your time is ${timer.innerText}`;
         console.log(timer.innerText);
+        let scoreSave = localStorage.getItem("save")
+          ? JSON.parse(localStorage.getItem("save"))
+          : [];
+
+        if (timer.innerText) {
+          const save = timer.innerText;
+
+          scoreSave.push(save);
+          localStorage.setItem("save", JSON.stringify(scoreSave));
+        }
+
+        const best = document.querySelector(".bestScores");
+
+        const besties = JSON.parse(localStorage.getItem("save"));
+
+        console.log(text);
+        best.innerText = `${text}-- >${besties}`;
+
         komentarai.style.display = "block";
 
         bestScore.push(timer.innerText);
         console.log(bestScore);
         myStopFunction();
-        // komentarai.style.color = mycolor;
       }
     });
   });
 }
-
-// );
-
-// const rutuliukai2 = [...rutuliukai];
-// rutuliukai2.sort((a, b) => a - b);
+d = new Date();
+text = d.toLocaleDateString();
+console.log(text);
 
 const timeReset = 120;
 let clockTime = 0;
@@ -110,15 +132,6 @@ function updateClock() {
   const s = clockTime % 60;
   timer.innerText = ` ${m < 10 ? "0" + m : m} : ${s < 10 ? "0" + s : s}`;
 }
-
-// const balls = document.querySelector(".left-square div");
-// const newArr = [];
-// rutuliukai.forEach((e) => {
-//   newArr.push(e);
-//   newArr.sort();
-// });
-// newArr.sort((a, b) => a - b);
-// console.log(newArr);
 
 btn1.addEventListener("click", (e) => {
   e.stopPropagation();
