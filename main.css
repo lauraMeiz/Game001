@@ -270,7 +270,7 @@ body * {
   }
   body > .bestScores {
     width: 80px;
-    margin: 565px calc(50% - 120px);
+    margin: 610px calc(50% - 120px);
   }
   body > .bestScores > ul > li {
     width: 80px;
