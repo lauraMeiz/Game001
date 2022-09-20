@@ -245,7 +245,7 @@ body * {
 @media (max-width: 375px) {
   .container {
     width: 300px;
-    margin: 20px calc(50% - 150px);
+    margin: 0 calc(50% - 150px);
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 0.5fr 1fr 1fr 0.25fr 0.25fr;
@@ -322,77 +322,6 @@ body * {
     margin-top: 30px;
   }
 }
-/* header {
-    width: 300px;
-    margin: 0 calc(50% - 150px);
-  }
-  main .section {
-    width: 150px;
-    height: 150px;
-    justify-self: end;
-  }
-  main .left-round {
-    width: 150px;
-    height: 150px;
-    justify-self: end;
-  }
-  main .right-round {
-    width: 150px;
-    height: 150px;
-    justify-self: start;
-  }
-  section > .left-square {
-    width: 105px;
-    height: 105px;
-    font-size: 13px;
-    margin-top: 20px;
-  }
-  section > .right-square {
-    width: 120px;
-    width: 105px;
-    height: 105px;
-    font-size: 13px;
-    margin-top: 20px;
-  }
-
-  body > .bestScores {
-    width: 60px;
-    margin: 220px calc(50% - 100px);
-  }
-  body > .bestScores > ul > li {
-    width: 60px;
-    font-size: 13px;
-  }
-  body > .bestScores > ul {
-    width: 60px;
-    margin: 0 calc(50% - 11px);
-  }
-  h3 {
-    width: 55px;
-    font-size: 11px;
-  }
-
-  main > .btn1,
-  main > .btn2 {
-    width: 40px;
-    height: 40px;
-    font-size: 10px;
-  }
-  main > .time {
-    width: 70px;
-    height: 30px;
-    font-size: 10px;
-  }
-  main > .bestScores {
-    width: 100px;
-    margin: 0 calc(50% - -40px);
-  }
-  .bestScores > ul li {
-    width: 100px;
-    margin: 0 calc(50% - 50px);
-    font-size: 13px;
-  }
-} */
 
 body {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -400,7 +329,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
+  /* height: 100vh; */
 }
 
 main {
