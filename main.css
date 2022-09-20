@@ -161,22 +161,23 @@ body * {
     width: 70px;
     margin: 0 calc(50% - 35px);
   }
+  main > .comments {
+    width: 200px;
+    height: 40px;
+    font-size: 14px;
+  }
 }
 @media (max-width: 500px) {
   .container {
-    width: 500px;
-    margin: 20px calc(50% - 250px);
+    width: 300px;
+    margin: 0 calc(50% - 150px);
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 0.5fr 1fr 1fr 0.25fr 0.25fr;
     justify-self: center;
-
     grid-template-areas:
-      "time"
-      "leftas"
-      " raitas"
-      "btn1"
-      "btn2";
+      "time com"
+      "leftas leftas"
+      "raitas raitas"
+      "btn1 btn2";
   }
   main .left-round {
     width: 250px;
@@ -190,7 +191,7 @@ body * {
   }
   body > .bestScores {
     width: 80px;
-    margin: 300px calc(50% - 197px);
+    margin: 0 calc(50% - 170px);
   }
   body > .bestScores > ul > li {
     width: 80px;
@@ -204,15 +205,29 @@ body * {
     width: 75px;
     font-size: 11px;
   }
-  main > .btn1,
-  main > .btn2 {
-    justify-self: center;
+  main > .btn1 {
+    justify-self: end;
+    margin-top: -50px;
   }
-  section > .comments {
-    width: 90px;
-    padding: 20px;
-    margin-top: 20px;
-    margin-left: 10px;
+  main > .btn2 {
+    justify-self: start;
+    margin-top: -50px;
+  }
+  main > .comments {
+    width: 100px;
+    height: 40px;
+    padding: 5px 10px;
+    grid-area: com;
+    font-size: 10px;
+    display: block;
+  }
+  main > .time {
+    width: 70px;
+    height: 40px;
+    padding: 5px 10px;
+    grid-area: time;
+    font-size: 18px;
+    text-align: center;
   }
   main .section {
     width: 200px;
@@ -240,6 +255,9 @@ body * {
     height: 170px;
     font-size: 16px;
     margin-top: 40px;
+  }
+  h1 {
+    font-size: 16px;
   }
 }
 @media (max-width: 375px) {
@@ -247,30 +265,27 @@ body * {
     width: 300px;
     margin: 0 calc(50% - 150px);
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 0.5fr 1fr 1fr 0.25fr 0.25fr;
     justify-self: center;
 
     grid-template-areas:
-      "time"
-      "leftas"
-      " raitas"
-      "btn1"
-      "btn2";
+      "time com"
+      "leftas leftas"
+      " raitas raitas"
+      "btn1 btn2";
   }
   main .left-round {
-    width: 150px;
-    height: 150px;
+    width: 250px;
+    height: 250px;
     justify-self: center;
   }
   main .right-round {
-    width: 150px;
-    height: 150px;
+    width: 250px;
+    height: 250px;
     justify-self: center;
   }
   body > .bestScores {
     width: 80px;
-    margin: 610px calc(50% - 120px);
+    margin: 0 calc(50% - 197px);
   }
   body > .bestScores > ul > li {
     width: 80px;
@@ -284,15 +299,17 @@ body * {
     width: 75px;
     font-size: 11px;
   }
-  main > .btn1,
-  main > .btn2 {
-    justify-self: center;
-  }
-  section > .comments {
+
+  main > .comments {
+    font-size: 10px;
     width: 90px;
-    padding: 20px;
-    margin-top: 20px;
-    margin-left: 10px;
+    height: 30px;
+    padding: 2px 5px;
+  }
+  main > .time {
+    font-size: 15px;
+    width: 90px;
+    height: 30px;
   }
   main .section {
     width: 200px;
@@ -300,26 +317,39 @@ body * {
     justify-self: end;
   }
   main .left-round {
-    width: 220px;
-    height: 220px;
-    justify-self: end;
+    width: 250px;
+    height: 250px;
+    justify-self: center;
   }
   main .right-round {
-    width: 200px;
-    height: 200px;
-    justify-self: start;
+    width: 250px;
+    height: 250px;
+    justify-self: center;
   }
   section > .left-square {
-    width: 150px;
-    height: 150px;
-    font-size: 15px;
-    margin-top: 35px;
+    width: 170px;
+    height: 170px;
+    font-size: 16px;
+    margin-top: 40px;
   }
   section > .right-square {
-    width: 130px;
-    height: 130px;
-    font-size: 13px;
-    margin-top: 30px;
+    width: 170px;
+    height: 170px;
+    font-size: 16px;
+    margin-top: 40px;
+  }
+  main > .btn1,
+  main > .btn2 {
+    margin-top: -50px;
+  }
+  main > .btn1 {
+    justify-self: end;
+  }
+  main > .btn2 {
+    justify-self: start;
+  }
+  h1 {
+    font-size: 15px;
   }
 }
 
@@ -327,7 +357,10 @@ body {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   background-image: url(./img/fe5a969de1f57dec99170400673b2c5e60b874dc.jpg);
   background-position: center;
-  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   background-size: cover;
   height: 100vh;
   background-color: #729fff;
@@ -338,10 +371,10 @@ main {
   /* height: 100vh; */
   margin: 0 calc(50% - 400px);
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
+  /* grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr; */
   grid-template-areas:
-    "time time"
+    "time com"
     "leftas raitas"
     "btn1 btn2";
 }
@@ -353,12 +386,12 @@ main {
   height: 50px;
   display: flex;
   flex-direction: column;
-  justify-self: center;
+  justify-self: end;
   opacity: 1;
   background-color: #729fff;
   box-shadow: 3px 3px rgb(103, 3, 77);
   color: white;
-  border-radius: 20%;
+  border-radius: 50%;
   font-size: 20px;
 }
 
@@ -437,12 +470,13 @@ main {
 }
 .comments {
   color: azure;
-  width: 150px;
-  padding: 30px;
+  width: 300px;
+  padding: 10px;
   border-radius: 50%;
-  margin-top: -100px;
-  margin-left: -80px;
-  display: none;
+  margin-top: 0;
+  text-align: center;
+  justify-self: start;
+  display: block;
   text-transform: uppercase;
   font-style: italic;
   z-index: 3;
