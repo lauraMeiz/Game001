@@ -300,8 +300,8 @@ body * {
     justify-self: end;
   }
   main .left-round {
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
     justify-self: end;
   }
   main .right-round {
@@ -310,10 +310,10 @@ body * {
     justify-self: start;
   }
   section > .left-square {
-    width: 130px;
-    height: 130px;
-    font-size: 13px;
-    margin-top: 30px;
+    width: 150px;
+    height: 150px;
+    font-size: 15px;
+    margin-top: 35px;
   }
   section > .right-square {
     width: 130px;
