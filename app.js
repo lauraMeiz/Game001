@@ -94,10 +94,10 @@ function start() {
           scoreSave.push(saveT);
           localStorage.setItem("save", JSON.stringify(scoreSave));
 
-          let html = `<li>${saveT}</li>`;
+          let html = `<li style="font-size:15px">${saveT}</li>`;
           ulas.insertAdjacentHTML("afterend", html);
         }
-
+        localStorage.setItem("save", JSON.stringify(scoreSave));
         komentarai.style.display = "block";
 
         myStopFunction();
